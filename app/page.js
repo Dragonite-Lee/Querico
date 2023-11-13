@@ -1,18 +1,17 @@
 import Image from 'next/image'
 
 import { connectDB } from '@/util/database'
+import LoginBtn from './loginBtn';
 
 export default async function Home() {
 
   const client = await connectDB;
-  const db = client.db("blog")
-
-  let result = await db.collection('post').find().toArray()
+  const db = client.db("querico")
   
-  console.log(result)
   return (
     <div>
       안녕
+      <LoginBtn />
     </div>
   )
 }

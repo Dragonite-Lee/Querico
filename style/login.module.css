@@ -1,0 +1,57 @@
+.login_container {
+    width: 1340px;
+    padding: 0px 30px;
+    min-width: 1340px;
+    height: 100%;
+}
+.input_container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 1200px;
+    height: 285px;
+    margin-top: 80px;
+}
+.input_box {
+    display: flex;
+    width: 1200px;
+    height: 80px;
+    text-indent: 30px;
+    align-items: center;
+    font-family: "TheJamsil5Bold_300";
+    font-size: 18px;
+    line-height: 27px;
+    border-radius: 10px;
+    color: var(--main_black_01, #333944);
+    background: var(--main_white_01, #FBFBFB);
+    border: none;
+}
+.submit_box {
+    margin-top: 15px;
+    display: flex;
+    width: 1200px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: var(--main_black_03, #D6D7DA);
+    color: var(--main_black_01, #333944);
+    font-family: "TheJamsil5Bold_400";
+    font-size: 20px;
+    line-height: 30px;
+    border: none;
+}
+.option_container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 1200px;
+    height: 87px;
+    font-family: "TheJamsil5Bold_300";
+    font-size: 18px;
+    line-height: 27px;
+}
+.sign_up {
+    color: var(--main_black_01, #333944);
+    text-decoration: none;
+}

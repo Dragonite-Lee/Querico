@@ -40,13 +40,14 @@
     font-size: 20px;
     line-height: 30px;
     border: none;
+    cursor: pointer;
 }
 .option_container {
     margin-top: 20px;
     display: flex;
     justify-content: center;
     width: 1200px;
-    height: 87px;
+    height: 67px;
     font-family: "TheJamsil5Bold_300";
     font-size: 18px;
     line-height: 27px;
@@ -54,4 +55,19 @@
 .sign_up {
     color: var(--main_black_01, #333944);
     text-decoration: none;
+}
+.social_container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 42px;
+    width: 1200px;
+    height: 48px;
+}
+.social_login {
+    display: block;
+    width: 200px;
+    height: 48px;
+    cursor: pointer;
 }

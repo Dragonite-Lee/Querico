@@ -2,16 +2,16 @@ import Image from 'next/image'
 
 import style from '../../style/loginLayout.module.css'
 
-import fork_B from '../../public/img_fork_B.png'
-import fork_G from '../../public/img_fork_G.png'
-import fork_Y from '../../public/img_fork_Y.png'
-import spoon_R from '../../public/img_spoon_R.png'
-import spoon_G from '../../public/img_spoon_G.png'
-import spoon_Y from '../../public/img_spoon_Y.png'
-import knife_R from '../../public/img_knife_R.png'
-import knife_G from '../../public/img_knife_G.png'
-import knife_Y from '../../public/img_knife_Y.png'
-import logo_pc from '../../public/logo_pc.png'
+import fork_B from '../../public/login/img_fork_B.png'
+import fork_G from '../../public/login/img_fork_G.png'
+import fork_Y from '../../public/login/img_fork_Y.png'
+import spoon_R from '../../public/login/img_spoon_R.png'
+import spoon_G from '../../public/login/img_spoon_G.png'
+import spoon_Y from '../../public/login/img_spoon_Y.png'
+import knife_R from '../../public/login/img_knife_R.png'
+import knife_G from '../../public/login/img_knife_G.png'
+import knife_Y from '../../public/login/img_knife_Y.png'
+import logo_pc from '../../public/login/logo_pc.png'
 
 export default function Layout({ children }) {
     return (

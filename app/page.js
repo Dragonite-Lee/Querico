@@ -1,7 +1,6 @@
 import Image from 'next/image'
 
 import { connectDB } from '@/util/database'
-import LoginBtn from './loginBtn';
 
 export default async function Home() {
 
@@ -11,7 +10,7 @@ export default async function Home() {
   return (
     <div>
       안녕
-      <LoginBtn />
+      
     </div>
   )
 }

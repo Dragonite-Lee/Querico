@@ -19,10 +19,10 @@ export default function KakaoLogin() {
             </div>
         )
     }
-    // , { redirect: false, callbackUrl: "/" }
+    
     return (
         <div>
-            <Image onClick={() => signIn("kakao")} src={btn_kakao} alt="카카오로그인" className={style.social_login} />
+            <Image onClick={() => signIn("kakao", { redirect: false, callbackUrl: "/" })} src={btn_kakao} alt="카카오로그인" className={style.social_login} />
             <div onClick={() => signOut({
                 redirect: true,
                 callbackUrl: `http://localhost:3000/api/auth/serverlogout?userId=${session.user.id}`,

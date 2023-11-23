@@ -4,10 +4,10 @@ import Image from "next/image"
 import { signIn, useSession, signOut } from "next-auth/react"
 
 import style from '../../style/login.module.css'
-import btn_kakao from '../../public/login/btn_kakao.png'
+import btn_naver from '../../public/login/btn_naver.png'
 
 
-export default function KakaoLogin() {
+export default function NaverLogin() {
 
     const {data: session, status} = useSession()
     if (status === 'authenticated') {
@@ -22,7 +22,7 @@ export default function KakaoLogin() {
     // , { redirect: false, callbackUrl: "/" }
     return (
         <div>
-            <Image onClick={() => signIn("kakao")} src={btn_kakao} alt="카카오로그인" className={style.social_login} />
+            <Image onClick={() => signIn("naver")} src={btn_naver} alt="네이버로그인" className={style.social_login} />
             <div onClick={() => signOut({
                 redirect: true,
                 callbackUrl: `http://localhost:3000/api/auth/serverlogout?userId=${session.user.id}`,

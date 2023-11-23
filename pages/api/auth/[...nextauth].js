@@ -3,6 +3,7 @@ import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import KakaoProvider from 'next-auth/providers/kakao'
+import NaverProvider from "next-auth/providers/naver";
 import bcrypt from 'bcrypt'
 
 
@@ -11,6 +12,10 @@ export const authOptions = {
     KakaoProvider({
       clientId: process.env.KAKAO_CLIENT_ID,
       clientSecret: process.env.KAKAO_CLIENT_SECRET,
+    }),
+    NaverProvider({
+      clientId: process.env.NAVER_CLIENT_ID,
+      clientSecret: process.env.NAVER_CLIENT_SECRET
     }),
     // CredentialsProvider({
       //1. 로그인페이지 폼 자동생성해주는 코드 
@@ -60,10 +65,12 @@ export const authOptions = {
         //   refreshToken: account.refresh_token,
         //   user: user,
         // }
-        token.user = {}
-        token.user.id = user.id;
-        token.user.name = user.name;
-        token.user.email = user.email;
+        // token.user = {}
+        // token.user.id = user
+        // token.user.name = user.name;
+        // token.user.email = user.email;
+        token.user = user;
+        token.provider = account.provider;
         token.accessToken = account.access_token;
         token.accessTokenExpires = account.expires_at;
         token.refreshToken = account.refresh_token;
@@ -74,6 +81,7 @@ export const authOptions = {
     //jwt토큰정보를 session에 유지시키게 됨
     async session({ session, token }) {
       session.user = token.user;
+      session.provider = token.provider;
       session.accessToken = token.accessToken;
       session.accessTokenExpires = token.accessTokenExpires;
       session.error = token.error;

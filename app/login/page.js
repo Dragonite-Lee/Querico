@@ -3,8 +3,8 @@ import Link from 'next/link'
 
 import style from '../../style/login.module.css'
 import KakaoLogin from '../authlogin/kakao'
+import NaverLogin from '../authlogin/naver'
 import bg_login from '../../public/login/bg-login.png'
-import btn_naver from '../../public/login/btn_naver.png'
 
 
 export default function Login(){
@@ -33,7 +33,7 @@ export default function Login(){
             <Link href="/signup" className={style.sign_up}>새로 오셨나요?</Link>
           </div>
           <div className={style.social_container}>
-            <Image src={btn_naver} alt="네이버로그인" className={style.social_login} />
+            <NaverLogin />
             <KakaoLogin />
           </div>
         </div>

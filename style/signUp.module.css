@@ -31,7 +31,7 @@
     width: 580px;
     height: 95px;
     color: #000;
-    font-family: "TheJamsil5Bold_400";
+    font-family: "TheJamsil5Bold_300";
     font-size: 20px;
     line-height: 30px;
 }
@@ -70,14 +70,14 @@
 .alert_red {
     width: 580px;
     color: var(--main_red_01, #F47057);
-    font-family: "TheJamsil5Bold_400";
+    font-family: "TheJamsil5Bold_300";
     font-size: 18px;
     line-height: 27px;
 }
 .alert_blue {
     width: 580px;
     color: var(--main_blue_01, #1A5289);
-    font-family: "TheJamsil5Bold_400";
+    font-family: "TheJamsil5Bold_300";
     font-size: 18px;
     line-height: 27px;
 }
@@ -89,7 +89,7 @@
     width: 580px;
     height: 160px;
     color: #000;
-    font-family: 'TheJamsil5Bold_400';
+    font-family: 'TheJamsil5Bold_300';
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
@@ -113,7 +113,7 @@
     width: 580px;
     height: 160px;
     color: #000;
-    font-family: 'TheJamsil5Bold_400';
+    font-family: 'TheJamsil5Bold_300';
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
@@ -140,7 +140,7 @@
     border: none;
     background: var(--main_black_03, #D6D7DA);
     color: var(--main_black_01, #333944);
-    font-family: 'TheJamsil5Bold_400';
+    font-family: 'TheJamsil5Bold_300';
     font-size: 20px;
     line-height: 30px;
 }
@@ -154,7 +154,7 @@
     border: none;
     background: var(--main_black_01, #333944);
     color: var(--main_white_01, #FBFBFB);
-    font-family: 'TheJamsil5Bold_400';
+    font-family: 'TheJamsil5Bold_300';
     font-size: 20px;
     line-height: 30px;
 }

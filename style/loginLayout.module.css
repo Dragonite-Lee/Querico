@@ -41,21 +41,21 @@
     width: 48px;
     height: 222px;
     transform: translateY(50%);
-    transition: all 1s;
+    transition: all 0.5s;
 }
 .spoon_img {
     display: block;
     width: 64px;
     height: 222px;
     transform: translateY(50%);
-    transition: all 1s;
+    transition: all 0.5s;
 }
 .knife_img {
     display: block;
     width: 37px;
     height: 222px;
     transform: translateY(50%);
-    transition: all 1s;
+    transition: all 0.5s;
 }
 .fork_img:hover, .spoon_img:hover, .knife_img:hover {
     transform: translateY(50px);

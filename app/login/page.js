@@ -25,8 +25,8 @@ export default function Login(){
           }}
         >
           <form action="/api/login" method="POST" className={style.input_container}>
-            <input name="email" placeholder="이메일을 입력해 주세요" className={style.input_box}/>
-            <input name="password" placeholder="비밀번호를 입력해 주세요" className={style.input_box}/>
+            <input type="text" name="email" placeholder="이메일을 입력해 주세요" className={style.input_box}/>
+            <input type="password" name="password" placeholder="비밀번호를 입력해 주세요" className={style.input_box}/>
             <button type="submit" className={style.submit_box}>로그인</button>
           </form>
           <div className={style.option_container}>

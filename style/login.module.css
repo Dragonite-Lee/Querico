@@ -35,8 +35,8 @@
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    background: var(--main_black_03, #D6D7DA);
-    color: var(--main_black_01, #333944);
+    background: var(--main_black_01, #333944);
+    color: var(--main_black_03, #D6D7DA);
     font-family: "TheJamsil5Bold_400";
     font-size: 20px;
     line-height: 30px;

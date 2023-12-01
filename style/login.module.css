@@ -19,7 +19,7 @@
     height: 80px;
     text-indent: 30px;
     align-items: center;
-    font-family: "TheJamsil5Bold_300";
+    font-family: "TheJamsil2Light_300";
     font-size: 18px;
     line-height: 27px;
     border-radius: 10px;
@@ -37,7 +37,7 @@
     border-radius: 10px;
     background: var(--main_black_01, #333944);
     color: var(--main_black_03, #D6D7DA);
-    font-family: "TheJamsil5Bold_400";
+    font-family: "TheJamsil3Regular_400";
     font-size: 20px;
     line-height: 30px;
     border: none;
@@ -49,7 +49,7 @@
     justify-content: center;
     width: 1200px;
     height: 67px;
-    font-family: "TheJamsil5Bold_300";
+    font-family: "TheJamsil2Light_300";
     font-size: 18px;
     line-height: 27px;
 }

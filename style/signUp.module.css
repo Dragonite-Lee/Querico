@@ -1,0 +1,160 @@
+.container {
+    width: 1340px;
+    padding: 0px 70px;
+    min-width: 1340px;
+    height: 550px;
+    padding-top:80px; 
+    margin: 0 auto;
+}
+.content_container {
+    width: 1200px;
+    height: 410px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.content_left {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.content_right {
+    display: flex;
+    flex-direction: column;
+}
+/*이메일*/
+.email_box {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    width: 580px;
+    height: 95px;
+    color: #000;
+    font-family: "TheJamsil5Bold_400";
+    font-size: 20px;
+    line-height: 30px;
+}
+.email_input_box {
+    position: relative;
+}
+.email_input {
+    width: 580px;
+    padding-bottom: 10px;
+    margin-bottom: 8px;
+    color: var(--main_black_01, #333944);
+    font-family: "TheJamsil5Bold_300";
+    font-size: 18px;
+    line-height: 27px;
+    outline: none;
+    border-bottom: 1px solid var(--main_black_02, #989BA1);
+}
+.email_repeat_check {
+    position: absolute;
+    top: 2px;
+    right: 4px;
+    display: flex;
+    width: 72px;
+    height: 24px;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background: var(--main_black_01, #333944);
+    color: var(--main_white_01, #FBFBFB);
+    font-family: "TheJamsil5Bold_300";
+    font-size: 16px;
+    line-height: 19.2px;
+}
+.alert_red {
+    width: 580px;
+    color: var(--main_red_01, #F47057);
+    font-family: "TheJamsil5Bold_400";
+    font-size: 18px;
+    line-height: 27px;
+}
+.alert_blue {
+    width: 580px;
+    color: var(--main_blue_01, #1A5289);
+    font-family: "TheJamsil5Bold_400";
+    font-size: 18px;
+    line-height: 27px;
+}
+/*비밀번호*/
+.pw_box {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    width: 580px;
+    height: 160px;
+    color: #000;
+    font-family: 'TheJamsil5Bold_400';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+}
+.pw_input {
+    width: 580px;
+    padding-bottom: 10px;
+    margin-bottom: 8px;
+    color: #585B60;
+    font-family: 'TheJamsil5Bold_300';
+    font-size: 18px;
+    line-height: 27px;
+    outline: none;
+    border-bottom: 1px solid var(--main_black_02, #989BA1);
+}
+.name_box {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    width: 580px;
+    height: 160px;
+    color: #000;
+    font-family: 'TheJamsil5Bold_400';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+}
+.name_input {
+    width: 580px;
+    padding-bottom: 10px;
+    margin-bottom: 8px;
+    color: #585B60;
+    font-family: 'TheJamsil5Bold_300';
+    font-size: 18px;
+    line-height: 27px;
+    outline: none;
+    border-bottom: 1px solid var(--main_black_02, #989BA1);
+}
+.SignUpBtn_inactive {
+    display: flex;
+    width: 1200px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: none;
+    background: var(--main_black_03, #D6D7DA);
+    color: var(--main_black_01, #333944);
+    font-family: 'TheJamsil5Bold_400';
+    font-size: 20px;
+    line-height: 30px;
+}
+.SignUpBtn_active {
+    display: flex;
+    width: 1200px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: none;
+    background: var(--main_black_01, #333944);
+    color: var(--main_white_01, #FBFBFB);
+    font-family: 'TheJamsil5Bold_400';
+    font-size: 20px;
+    line-height: 30px;
+}

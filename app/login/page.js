@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import style from '../../style/login.module.css'
-import KakaoLogin from '../authlogin/kakao'
+
 import NaverLogin from '../authlogin/naver'
 import bg_login from '../../public/login/bg-login.png'
 
@@ -34,7 +34,6 @@ export default function Login(){
           </div>
           <div className={style.social_container}>
             <NaverLogin />
-            <KakaoLogin />
           </div>
         </div>
       </div>

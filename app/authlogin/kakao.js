@@ -10,11 +10,11 @@ import btn_kakao from '../../public/login/btn_kakao.png'
 export default function KakaoLogin() {
 
     const {data: session, status} = useSession()
-    if (status === 'authenticated') {
+    if (status === 'authenticated' && session.provider == 'kakao') {
         console.log(session)
         return (
             <div>
-                <p>email:{session.user.email}</p>
+                <p>email:{session.profile.email}</p>
             <div onClick={() => signOut()}>로그아웃</div>
             </div>
         )
@@ -22,11 +22,8 @@ export default function KakaoLogin() {
     
     return (
         <div>
-            <Image onClick={() => signIn("kakao", { redirect: false, callbackUrl: "/" })} src={btn_kakao} alt="카카오로그인" className={style.social_login} />
-            <div onClick={() => signOut({
-                redirect: true,
-                callbackUrl: `http://localhost:3000/api/auth/serverlogout?userId=${session.user.id}`,
-              })}>로그아웃</div>
+            <Image onClick={() => signIn("kakao")} src={btn_kakao} alt="카카오로그인" className={style.social_login} />
+            <div onClick={() => signOut()}>로그아웃</div>
         </div>
         
     )

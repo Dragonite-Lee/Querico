@@ -6,10 +6,10 @@ import { useRouter } from 'next/navigation'
 import { signIn } from 'next-auth/react'
 import { useState } from 'react'
 
-import style from '../../style/login.module.css'
+import style from '../../../style/login.module.css'
 
 import NaverLogin from '../authlogin/naver'
-import bg_login from '../../public/login/bg-login.png'
+import bg_login from '../../../public/login/bg-login.png'
 
 
 
@@ -40,7 +40,7 @@ export default function Login(){
       if (result?.error) console.log("Error :" + result.error);
 
       //로그인 성공
-      router.push('/');
+      router.push('/mainboard');
     } catch (error) {
       console.log("Error :" + error);
     }

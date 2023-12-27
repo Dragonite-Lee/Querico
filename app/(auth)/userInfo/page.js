@@ -2,7 +2,7 @@
 import { useSession, signOut } from 'next-auth/react'
 import Link from 'next/link';
 
-import style from '../../style/userInfo.module.css'
+import style from '../../../style/userInfo.module.css'
 
 function UserInfo() {
   

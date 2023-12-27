@@ -159,3 +159,16 @@
     font-size: 20px;
     line-height: 30px;
 }
+.option_container {
+    display: flex;
+    justify-content: center;
+    width: 1200px;
+    height: 48px;
+    font-family: "TheJamsil2Light_300";
+    font-size: 18px;
+    line-height: 27px;
+}
+.login {
+    color: var(--main_black_01, #333944);
+    text-decoration: none;
+}

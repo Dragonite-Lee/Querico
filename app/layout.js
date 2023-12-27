@@ -1,10 +1,6 @@
 import './globals.css'
-import Link from 'next/link'
-import Image from 'next/image'
 import { cookies } from 'next/dist/client/components/headers'
 
-import style from '../style/layout.module.css'
-import logo_pc from '../public/login/logo_pc.png'
 import AuthSession from './AuthSession'
 import RecoilProvider from './RecoilRoot'
 
@@ -24,9 +20,6 @@ export default async function RootLayout({ children }) {
       <body>
         <AuthSession>
           <RecoilProvider>
-          <div className={style.top_container}>
-            <Image src={logo_pc} alt="Querico로고" className={style.logo_img} />
-          </div>
             {children}
           </RecoilProvider>
         </AuthSession>

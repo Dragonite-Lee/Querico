@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import style from '@/style/signUp.module.css'
 import EmailBox from './emailBox';
 import PasswordBox from './passwordBox';
@@ -18,6 +20,9 @@ function SignUp() {
         <div className={style.content_right}>
           <NameBox />
         </div>
+      </div>
+      <div className={style.option_container}>
+        <Link href="/login" className={style.login}>로그인하러 가기</Link>
       </div>
       <SignUpBtn />
     </section>

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import style from '../../style/loginLayout.module.css'
+import style from '../../style/authLayout.module.css'
 
 import fork_B from '../../public/login/img_fork_B.png'
 import fork_G from '../../public/login/img_fork_G.png'

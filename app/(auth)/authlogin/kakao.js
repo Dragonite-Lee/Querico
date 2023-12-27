@@ -3,8 +3,8 @@
 import Image from "next/image"
 import { signIn, useSession, signOut } from "next-auth/react"
 
-import style from '../../style/login.module.css'
-import btn_kakao from '../../public/login/btn_kakao.png'
+import style from '../../../style/login.module.css'
+import btn_kakao from '../../../public/login/btn_kakao.png'
 
 
 export default function KakaoLogin() {

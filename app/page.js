@@ -1,6 +1,8 @@
 
 // import { connectDB } from '@/util/database'
 
+import UserInfo from "./userInfo/page"
+
 export default async function Home() {
 
 
@@ -9,7 +11,7 @@ export default async function Home() {
     <div>
       안녕
       
-      
+      <UserInfo />
       
     </div>
   )

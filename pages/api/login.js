@@ -3,7 +3,7 @@ import { connectDB } from '@/util/database'
 export default async function handler(요청, 응답) {
 
     const client = await connectDB;
-    const db = client.db("blog")
+    const db = client.db("querico")
 
     let usedID = await db.collection('login').find().toArray();
 

@@ -6,14 +6,29 @@ const emailState = atom({
   default: "",
 });
 
+const emailValidateState = atom({
+  key: "emailValidateState",
+  default: false,
+});
+
 const passwordState = atom({
     key: "passwordState",
     default: "",
 });
 
-  const nameState = atom({
+const passwordValidateState = atom({
+  key: "passwordValidateState",
+  default: false,
+});
+
+const nameState = atom({
     key: "nameState",
     default: "",
 });
 
-export {emailState, passwordState, nameState};
+const nameValidateState = atom({
+  key: "nameValidateState",
+  default: false,
+});
+
+export {emailState, emailValidateState, passwordState, passwordValidateState, nameState, nameValidateState};

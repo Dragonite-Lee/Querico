@@ -1,21 +1,9 @@
 import { NextResponse } from 'next/server'
 import { getToken } from 'next-auth/jwt'
 
-export async function middleware(request) {
+export async function middleware(request, event) {
 
-//     const session = await getToken({req : request})
-//     if ( request.nextUrl.pathname.startsWith('/write') ) {
-//         if (session == null) {
-//             return NextResponse.redirect(new URL('/api/auth/signin', request.url))
-//         }
-//     }
-
-
-//   if ( request.nextUrl.pathname === '/list' ) {
-//     console.log(request.headers.get('sec-ch-ua-platform'))
-//     console.log(new Date())
-//     return NextResponse.next()
-//   } 
+    // const session = await getToken()
 
     // if (request.nextUrl.pathname.startsWith('/register')) {
     //     if (request.cookies.has('visited') == false) {

@@ -29,6 +29,7 @@ export const authOptions = {
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) {
           throw new Error('Invalid Credentials');
+          // console.log(1)
         }
 
         const user = await prisma.user.findUnique({
@@ -36,10 +37,16 @@ export const authOptions = {
             email: credentials.email
           }
         });
-
-        if (!user || !user?.hashedPassword) {
-          throw new Error('Invalid Credentials');
+ 
+        if (!user) {
+          alert("존재하지 않는 이메일입니다.");
+          return null;
         }
+        if (!user.hashedPassword) {
+          alert("소셜 로그인으로 가입된 이메일입니다.");
+          return null;
+        }
+        
 
         const pwCheck = await bcrypt.compare(
           credentials.password,
@@ -47,8 +54,26 @@ export const authOptions = {
         );
 
         if (!pwCheck) {
-          throw new Error('Invalid Credentials');
+          alert("비밀번호가 불일치 합니다.");
+          return null;
         }
+
+        const account = await prisma.account.findUnique({
+          where: {
+            userId: user.id
+          }
+        })
+        
+        if (!account) {
+          const newAccount = await prisma.account.create({
+            data: {
+              userId: user.id,
+              type: "credentials",
+              provider: "credentials",
+              providerAccountId: String(new Date().getTime() + Math.floor(Math.random() + 1)),
+            }
+          });
+        } 
 
         return user;
       }
@@ -59,28 +84,55 @@ export const authOptions = {
     //4. jwt 만들 때 실행되는 코드 
     //jwt에 토큰들과 만료기간,user를 담아 보냄
     async jwt({ token, account, profile }) {
-      if (profile && account) {
-        token.email = profile.response.email;
-        token.name = profile.response.name;
-        token.provider = account.provider;
-        token.accessToken = account.access_token;
-        token.accessTokenExpires = account.expires_at;
-        token.refreshToken = account.refresh_token;
+      if (account?.provider === 'naver') {
+        
+        const exUser = await prisma.user.findFirst({
+          where: { name: token.name, email: token.email },
+        });
+
+        // 등록된 유저가 아니라면 회원가입
+        if (!exUser) {
+          await prisma.user.create({
+            data: {
+              name: token.name,
+              email: token.email,
+            },
+          });
+        }
+        // if (profile && account) {
+        //   token.email = profile.response.email;
+        //   token.name = profile.response.name;
+        //   token.provider = account.provider;
+        //   token.accessToken = account.access_token;
+        //   token.accessTokenExpires = account.expires_at;
+        //   token.refreshToken = account.refresh_token;
+        // }
       }
-    
       return token;
     },
     //5. 유저 세션이 조회될 때 마다 실행되는 코드
     //jwt토큰정보를 session에 유지시키게 됨
-    async session({ session, token }) {
-      if (session) {
-        session.email = token.email;
-        session.name = token.name;
-        session.provider = token.provider;
-        session.accessToken = token.accessToken;
-        session.accessTokenExpires = token.accessTokenExpires;
-        session.error = token.error;
-      }
+    async session({ session }) {
+      const exUser = await prisma.user.findUnique({
+        where: {
+          email: session.user.email
+        },
+        select: {
+          id: true,
+          name: true,
+          email: true,
+        }
+      })
+      
+      // if (session) {
+      //   session.email = token.email;
+      //   session.name = token.name;
+      //   session.provider = token.provider;
+      //   session.accessToken = token.accessToken;
+      //   session.accessTokenExpires = token.accessTokenExpires;
+      //   session.error = token.error;
+      // }
+      session.user = exUser;
       return session;
     },
   },

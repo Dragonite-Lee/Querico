@@ -2,23 +2,25 @@
 import { useState } from 'react';
 import { useSetRecoilState } from 'recoil';
 
-import { nameState } from '@/states/signup';
+import { nameState, nameValidateState } from '@/states/signup';
 import style from '@/style/signUp.module.css'
 
 
 function NameBox() {
 
     const nameHandler = useSetRecoilState(nameState);
+    const nameValidateHandler = useSetRecoilState(nameValidateState)
 
     let [nameValid, setNameValid] = useState(false);
     let [nameValue, setNameValue] = useState('');
 
     const nameValidate = (event) => {
-        const {target : {value}} = event;
+        const {currentTarget : {value}} = event;
         setNameValue(value);
+        nameHandler(value);
         if (value.length < 9 && value.length > 0) {
             setNameValid(true);
-            nameHandler(nameValue);
+            nameValidateHandler(true);
         } else {
             setNameValid(false);
         }
@@ -31,7 +33,7 @@ function NameBox() {
             </div>
             <div>
                 <input type="text" placeholder='닉네임을 입력해 주세요' className={style.name_input}
-                    onInput={(e) => {nameValidate(e)}}
+                    onChange={(e) => {nameValidate(e)}}
                 />
                 {
                     nameValid === true 

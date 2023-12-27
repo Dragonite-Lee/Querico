@@ -1,37 +1,54 @@
 'use client'
 import { useState } from 'react';
 import { useSetRecoilState } from 'recoil';
+import axios from 'axios';
 
-import { emailState } from '@/states/signup';
+import { emailState, emailValidateState } from '@/states/signup';
 import style from '@/style/signUp.module.css'
 import { emailReg } from '../../util/reg'
-import axios from 'axios';
 
 function EmailBox() {
 
     const emailHandler = useSetRecoilState(emailState);
+    const emailValidateHandler = useSetRecoilState(emailValidateState)
 
     let [emailValid, setEmailValid] = useState(false);
     let [emailRepeat, setEmailRepeat] = useState(false);
+    let [emailRepeatTest, setEmailRepeatTest] = useState('');
+    let [emailRepeatClick, setEmailRepeatClick] = useState(false);
     let [emailValue, setEmailValue] = useState('');
 
     const emailValidate = (event) => {
-        const {target : {value}} = event;
+        const {currentTarget : {value}} = event;
         setEmailValue(value);
+        emailHandler(value);
+        setEmailRepeatClick(false);
+        emailValidateHandler(false)
         if (emailReg.test(value)) {
           setEmailValid(true);
-          emailHandler(emailValue);
         } else {
           setEmailValid(false);
         }
     }
     
     /*onClick 이용해서 서버로 체크하게 됨 */
-    // const emailRepeatCheck = async (emailData) => {
-        
-        // const data = await axios.get('/api/repeat', emailData)
-        // console.log(data)
-    // }
+    const emailRepeatCheck = async (data) => {
+        setEmailRepeatClick(true)
+        let repeatData = {
+            "email": data
+        }
+        await axios.post('/api/repeat', repeatData)
+            .then((res) => {
+                setEmailRepeat(res.data.status)
+                setEmailRepeatTest(res.data.message)
+                if (res.status === false) {
+                    emailValidateHandler(true)
+                }
+            })
+            .catch((error) => {
+                console.log("Something went wrong" + error)
+            })
+    }
 
     return (
         <div className={style.email_box}>
@@ -41,7 +58,7 @@ function EmailBox() {
             <div>
             <div className={style.email_input_box}>
                 <input type="text" placeholder='이메일을 입력해 주세요' className={style.email_input}
-                    onInput={(e) => {emailValidate(e)}}
+                    onChange={(e) => {emailValidate(e)}}
                 />
                 <button className={style.email_repeat_check} onClick={()=>emailRepeatCheck(emailValue)}>
                     중복확인
@@ -54,10 +71,19 @@ function EmailBox() {
                 </div>
                 )
             }
-            {/* onChange로 focus가 떠나면 이미 가입된 이메일인지 사용가능인지 판별 하는 문구 필요 */}
-            {/* <div className={style.alert_blue}>
-                이미 가입된 이메일 입니다
-            </div> */}
+           {
+            emailRepeatClick === true && (
+                emailRepeat === true ? (
+                    <div className={style.alert_red}>
+                        {emailRepeatTest}
+                    </div>
+                ) : (
+                    <div className={style.alert_blue}>
+                        사용 가능한 이메일 입니다
+                    </div>
+                )
+            )
+           }
             </div>
         </div>
     )

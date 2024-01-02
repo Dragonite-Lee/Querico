@@ -3,8 +3,8 @@
 import Image from "next/image"
 import { signIn, useSession, signOut } from "next-auth/react"
 
-import style from '../../../style/login.module.css'
-import btn_naver from '../../../public/login/btn_naver.png'
+import style from '../../../../style/login.module.css'
+import btn_naver from '../../../../public/login/btn_naver.png'
 
 
 export default function NaverLogin() {

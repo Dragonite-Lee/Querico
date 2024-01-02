@@ -8,7 +8,7 @@ import { useState } from 'react'
 
 import style from '../../../style/login.module.css'
 
-import NaverLogin from '../authlogin/naver'
+import NaverLogin from '../components/authlogin/naver'
 import bg_login from '../../../public/login/bg-login.png'
 
 
@@ -40,7 +40,7 @@ export default function Login(){
       if (result?.error) console.log("Error :" + result.error);
 
       //로그인 성공
-      router.push('/mainboard');
+      router.push('/');
     } catch (error) {
       console.log("Error :" + error);
     }

@@ -24,12 +24,9 @@ export const authOptions = {
       },
 
       //2. 로그인요청시 실행되는코드
-      //직접 DB에서 아이디,비번 비교하고 
-      //아이디,비번 맞으면 return 결과, 틀리면 return null 해야함
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) {
           throw new Error('Invalid Credentials');
-          // console.log(1)
         }
 
         const user = await prisma.user.findUnique({
@@ -65,6 +62,7 @@ export const authOptions = {
         })
         
         if (!account) {
+          const jwt = requ
           const newAccount = await prisma.account.create({
             data: {
               userId: user.id,
@@ -99,20 +97,16 @@ export const authOptions = {
             },
           });
         }
-        // if (profile && account) {
-        //   token.email = profile.response.email;
-        //   token.name = profile.response.name;
-        //   token.provider = account.provider;
-        //   token.accessToken = account.access_token;
-        //   token.accessTokenExpires = account.expires_at;
-        //   token.refreshToken = account.refresh_token;
-        // }
+        token.accessToken = account.access_token
+        token.expiresAt = account.expires_at
+        token.refreshToken = account.refresh_token
       }
+      
       return token;
     },
     //5. 유저 세션이 조회될 때 마다 실행되는 코드
     //jwt토큰정보를 session에 유지시키게 됨
-    async session({ session }) {
+    async session({ session, token }) {
       const exUser = await prisma.user.findUnique({
         where: {
           email: session.user.email
@@ -124,14 +118,7 @@ export const authOptions = {
         }
       })
       
-      // if (session) {
-      //   session.email = token.email;
-      //   session.name = token.name;
-      //   session.provider = token.provider;
-      //   session.accessToken = token.accessToken;
-      //   session.accessTokenExpires = token.accessTokenExpires;
-      //   session.error = token.error;
-      // }
+      session.token = token
       session.user = exUser;
       return session;
     },

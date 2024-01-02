@@ -1,0 +1,29 @@
+.not_login_container {
+  width: 108px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+.to_login {
+  font-family: "TheJamsil2Light_300";
+  font-size: 18px;
+  line-height: 27px;
+  border-radius: 10px;
+  color: var(--main_black_01, #333944);
+  text-decoration: none;
+}
+.login_container {
+  width: 100%;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.user_logo_img {
+  width: 24px;
+  height: 24px;
+}

@@ -62,7 +62,11 @@ export const authOptions = {
         })
         
         if (!account) {
-          const jwt = requ
+          const jwt = require("jsonwebtoken");//이 부분으로 토큰 만들고 로그인할때마다 토큰 업데이트시켜줘야됨 혹은 디비에 토큰을 빼볼까..? 그래도될듯 
+          const token = jwt.sign({ email: user.email, name: user.name }, "access_token", {
+            expiresIn: "1h",
+          });
+          //expires_at
           const newAccount = await prisma.account.create({
             data: {
               userId: user.id,
@@ -88,6 +92,11 @@ export const authOptions = {
           where: { name: token.name, email: token.email },
         });
 
+        const updateAccount = await prisma.account.findUnique({//이부분으로 토큰 업데이트시켜야됨 
+          where: {
+            id: exUser.id
+          }
+        })
         // 등록된 유저가 아니라면 회원가입
         if (!exUser) {
           await prisma.user.create({

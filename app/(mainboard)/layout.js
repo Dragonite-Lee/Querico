@@ -4,19 +4,17 @@ import style from '../../style/mainboardLayout.module.css'
 import logo_pc from '../../public/login/logo_pc.png'
 import UserInfo from '../(auth)/components/userInfo/page'
 
-export default async function RootLayout({ children }) {
+export default function Layout({ children }) {
 
   return (
-    <html lang="en">
-      <body>
-          <div className={style.top_container}>
-            <Image src={logo_pc} alt="Querico로고" className={style.logo_img} />
-            <div className={style.user_container}>
-              <UserInfo />
-            </div>
+    <div>
+        <div className={style.top_container}>
+          <Image src={logo_pc} alt="Querico로고" className={style.logo_img} />
+          <div className={style.user_container}>
+            <UserInfo />
           </div>
-            {children}
-      </body>
-    </html>
+        </div>
+        {children}
+    </div>
   )
 }

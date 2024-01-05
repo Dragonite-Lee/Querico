@@ -43,7 +43,7 @@ function SignUpBtn() {
         } else {
           setActive(false)
         }
-        
+        // console.log(emailValidate)
         signupData = {
             "email" : emailValue,
             "name" : nameValue,

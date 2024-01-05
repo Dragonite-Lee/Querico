@@ -43,8 +43,9 @@ function EmailBox() {
       .then((res) => {
         setEmailRepeat(res.data.status);
         setEmailRepeatTest(res.data.message);
-        if (res.status === false) {
+        if (res.status == 200) {
           emailValidateHandler(true);
+          
         }
       })
       .catch((error) => {

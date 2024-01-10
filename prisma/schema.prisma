@@ -41,5 +41,10 @@ model Account {
   @@unique([provider, providerAccountId])
 }
 
+model Recipe {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  main_text String
+  main_img_url 
+}
 
 

@@ -12,7 +12,7 @@
   font-size: 18px;
   line-height: 27px;
   border-radius: 10px;
-  color: var(--main_black_01, #333944);
+  color: var(--main_black_01);
   text-decoration: none;
 }
 .login_container {

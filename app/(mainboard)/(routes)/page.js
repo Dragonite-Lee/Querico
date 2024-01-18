@@ -1,9 +1,12 @@
+import Link from "next/link";
 
 
-export default async function Home() {
+export default function Home() {
   return (
     <div>
-  fsdfs
+      <Link href="/recipe/create">
+        글 작성하기
+      </Link>
     </div>
   );
 }

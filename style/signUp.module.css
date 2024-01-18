@@ -2,8 +2,9 @@
     width: 1340px;
     padding: 0px 70px;
     min-width: 1340px;
-    height: 550px;
-    padding-top:80px; 
+    height: 620px;
+    padding-top:80px;
+    /* padding-bottom: 40px;  */
     margin: 0 auto;
 }
 .content_container {
@@ -42,12 +43,12 @@
     width: 580px;
     padding-bottom: 10px;
     margin-bottom: 8px;
-    color: var(--main_black_01, #333944);
+    color: var(--main_black_01);
     font-family: "TheJamsil2Light_300";
     font-size: 18px;
     line-height: 27px;
     outline: none;
-    border-bottom: 1px solid var(--main_black_02, #989BA1);
+    border-bottom: 1px solid var(--main_black_02);
 }
 .email_repeat_check {
     position: absolute;
@@ -62,22 +63,22 @@
     align-items: center;
     flex-shrink: 0;
     border-radius: 4px;
-    background: var(--main_black_01, #333944);
-    color: var(--main_white_01, #FBFBFB);
+    background: var(--main_black_01);
+    color: var(--main_white_01);
     font-family: "TheJamsil2Light_300";
     font-size: 16px;
     line-height: 19.2px;
 }
 .alert_red {
     width: 580px;
-    color: var(--main_red_01, #F47057);
+    color: var(--main_red_01);
     font-family: "TheJamsil2Light_300";
     font-size: 18px;
     line-height: 27px;
 }
 .alert_blue {
     width: 580px;
-    color: var(--main_blue_01, #1A5289);
+    color: var(--main_blue_01);
     font-family: "TheJamsil2Light_300";
     font-size: 18px;
     line-height: 27px;
@@ -105,7 +106,7 @@
     font-size: 18px;
     line-height: 27px;
     outline: none;
-    border-bottom: 1px solid var(--main_black_02, #989BA1);
+    border-bottom: 1px solid var(--main_black_02);
 }
 .name_box {
     display: flex;
@@ -129,7 +130,7 @@
     font-size: 18px;
     line-height: 27px;
     outline: none;
-    border-bottom: 1px solid var(--main_black_02, #989BA1);
+    border-bottom: 1px solid var(--main_black_02);
 }
 .SignUpBtn_inactive {
     display: flex;
@@ -139,8 +140,8 @@
     align-items: center;
     border-radius: 10px;
     border: none;
-    background: var(--main_black_03, #D6D7DA);
-    color: var(--main_black_01, #333944);
+    background: var(--main_black_03);
+    color: var(--main_black_01);
     font-family: 'TheJamsil3Regular_400';
     font-size: 20px;
     line-height: 30px;
@@ -153,14 +154,15 @@
     align-items: center;
     border-radius: 10px;
     border: none;
-    background: var(--main_black_01, #333944);
-    color: var(--main_white_01, #FBFBFB);
+    background: var(--main_black_01);
+    color: var(--main_white_01);
     font-family: 'TheJamsil3Regular_400';
     font-size: 20px;
     line-height: 30px;
 }
 .option_container {
     display: flex;
+    align-items: center;
     justify-content: center;
     width: 1200px;
     height: 48px;
@@ -168,7 +170,9 @@
     font-size: 18px;
     line-height: 27px;
 }
-.login {
-    color: var(--main_black_01, #333944);
+.to_login {
+    display: block;
+    
+    color: var(--main_black_01);
     text-decoration: none;
 }

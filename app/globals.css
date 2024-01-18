@@ -45,9 +45,9 @@ table {
 
 :root {
   --main_white_01: #FBFBFB;
-  --main_block_01: #333944;
-  --main_block_02: #989BA1;
-  --main_block_03: #D6D7DA;
+  --main_black_01: #333944;
+  --main_black_02: #989BA1;
+  --main_black_03: #D6D7DA;
   --main_blue_01: #1A5289;
   --main_blue_02: #8CA8C3;
   --main_red_01: #F47057;

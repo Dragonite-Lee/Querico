@@ -1,5 +1,6 @@
 import './globals.css'
 import { cookies } from 'next/dist/client/components/headers'
+import { Toaster } from "react-hot-toast";
 
 import AuthSession from './AuthSession'
 import RecoilProvider from './RecoilRoot'
@@ -20,6 +21,7 @@ export default async function RootLayout({ children }) {
       <body>
         <AuthSession>
           <RecoilProvider>
+            <Toaster position="top-center" />
             {children}
           </RecoilProvider>
         </AuthSession>

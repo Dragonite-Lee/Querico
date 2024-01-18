@@ -1,12 +1,10 @@
 .top_container {
-    width: 1340px;
+    width: auto;
     min-width: 1340px;
     height: 90px;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
     margin: 0 auto;
     position: relative;
+    box-shadow: 0px 0px 2px 0px var(--main_black_03);
 }
 .logo_img {
     width: 128px;

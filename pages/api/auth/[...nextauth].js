@@ -8,8 +8,6 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter";
 
 import { connectDB } from "@/util/database";
 import prisma from "@/lib/prismadb";
-import { useRouter } from 'next/navigation';
-
 
 export const authOptions = {
   providers: [
@@ -207,7 +205,10 @@ async function refreshNaverAccessToken(token) {
     const refreshedTokens = await res.data
 
     if (res.status !== 200) {
-      throw refreshedTokens
+      return {
+        ...token,
+        refreshedToken: '',
+      }
     }
 
     return {
@@ -228,7 +229,6 @@ async function refreshNaverAccessToken(token) {
 async function refreshCredentialsAccessToken(token) {
   try {
     const url = '/api/refreshAccess';
-    const router = useRouter();
     const data = {
       "refresh_token": token.refreshToken,
     };
@@ -241,19 +241,19 @@ async function refreshCredentialsAccessToken(token) {
       headers,
     });
 
+    if (res.status == 401 && res.data == "TOKEN_EXPIRE") {
+      token.refreshToken = '';
+      token.accessToken= '';
+      token.expiresAt= '';
+      return token;
+    };
+
     const refreshedTokens = await res.data;
 
-    if (res.status == 401 && res.data == "TOKEN_EXPIRE") {
-      router.push("login");
+    token.accessToken= refreshedTokens.access_token;
+    token.expiresAt= refreshedTokens.expires_in;
 
-    }
-
-    return {
-      ...token,
-      accessToken: refreshedTokens.access_token,
-      expiresAt: refreshedTokens.expires_in,
-    }
-
+    return token;
   } catch (error) {
     return {
       ...token,

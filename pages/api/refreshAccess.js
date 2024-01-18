@@ -1,5 +1,3 @@
-import bcrypt from "bcrypt"
-
 import prisma from "@/lib/prismadb"
 
 export default async function handler(request, response) {

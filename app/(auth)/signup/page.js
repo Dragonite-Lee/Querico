@@ -21,10 +21,10 @@ function SignUp() {
           <NameBox />
         </div>
       </div>
-      <div className={style.option_container}>
-        <Link href="/login" className={style.login}>로그인하러 가기</Link>
-      </div>
       <SignUpBtn />
+      <div className={style.option_container}>
+        <Link href="/login" className={style.to_login}>로그인하러 가기</Link>
+      </div>
     </section>
   );
 }

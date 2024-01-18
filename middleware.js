@@ -1,21 +1,20 @@
 import { NextResponse } from 'next/server'
 import { getToken } from 'next-auth/jwt'
+import toast from 'react-hot-toast';
 
-export async function middleware(request, event) {
+export async function middleware(req) {
 
-    // const session = await getToken()
+  // const token = await getToken({ req });
+    
+  // if (req.nextUrl.pathname.startsWith("/recipe")) {
+  //   if (!token) {
+  //     console.log(token)
+  //     toast.error("로그인 후 이용 가능합니다.")
+  //     return NextResponse.redirect(new URL('/', req.url));
+  //   }
+  // }
 
-    // if (request.nextUrl.pathname.startsWith('/register')) {
-    //     if (request.cookies.has('visited') == false) {
-    //         const response = NextResponse.next()
-    //         response.cookies.set({
-    //             name: 'visited',
-    //             value: 'true',
-    //             maxAge: 3600,
-    //             httpOnly : true
-    //         })  
-    //         return response  //쿠키생성
-    //     }  //존재확인
-    //     return NextResponse.next()
-    // }
+  
+  // return NextResponse.next()
 } 
+

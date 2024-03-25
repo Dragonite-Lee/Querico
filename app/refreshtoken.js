@@ -11,6 +11,7 @@ const RefreshTokenHandler = ({ setSessionRefetchInterval }) => {
       const nowTime = Math.round(Date.now() / 1000);
       const timeRemaining = (session.token.expiresAt) - 7 * 60 - nowTime;
       setSessionRefetchInterval(timeRemaining > 0 ? timeRemaining : 0);
+      console.log(session)
     }
   }, [session, setSessionRefetchInterval]);
 

@@ -35,11 +35,11 @@ export const authOptions = {
         });
  
         if (!user) {
-          alert("존재하지 않는 이메일입니다.");
+          console.log("존재하지 않는 이메일입니다.");
           return null;
         }
         if (!user.hashedPassword) {
-          alert("소셜 로그인으로 가입된 이메일입니다.");
+          console.log("소셜 로그인으로 가입된 이메일입니다.");
           return null;
         }
         
@@ -50,7 +50,7 @@ export const authOptions = {
         );
 
         if (!pwCheck) {
-          alert("비밀번호가 불일치 합니다.");
+          console.log("비밀번호가 불일치 합니다.");
           return null;
         }
 

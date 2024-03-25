@@ -5,13 +5,12 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { signIn } from 'next-auth/react'
 import { useState } from 'react'
+import toast from 'react-hot-toast'
 
 import style from '../../../style/login.module.css'
 
 import NaverLogin from '../components/authlogin/naver'
 import bg_login from '../../../public/login/bg-login.png'
-
-
 
 export default function Login(){
 
@@ -37,10 +36,17 @@ export default function Login(){
         password: passwordValue
       })
 
-      if (result?.error) console.log("Error :" + result.error);
-
-      //로그인 성공
-      router.push('/');
+      if (result?.error) {
+        // console.log("Error :" + result.error);
+        toast.error("로그인을 실패했습니다.")
+      }
+      
+      if (result?.error == null) {
+        //로그인 성공
+        router.push('/');
+        toast.success("로그인을 성공했습니다.")
+      }
+      
     } catch (error) {
       console.log("Error :" + error);
     }

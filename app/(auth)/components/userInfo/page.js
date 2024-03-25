@@ -1,5 +1,5 @@
 'use client'
-import { useSession } from 'next-auth/react'
+import { signOut, useSession } from 'next-auth/react'
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -40,7 +40,7 @@ function UserInfo() {
         </div>
         <div>
           <div>
-
+            <button onClick={signOut}>로그아웃</button>
           </div>
         </div>
       </>
